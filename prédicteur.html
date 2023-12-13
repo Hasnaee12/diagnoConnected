@@ -147,20 +147,19 @@
                         <h1 class="text-white mb-4">Choisir la maladie à prédicter</h1>
                         <form>
                             <div class="row g-3">
-                                
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Maladie</option>
-                                        <option value="1"><a href="malaria.html" class="dropdown-item">Malaria</a></option>
-                                        <option value="2"><a href="formkidney.html" class="dropdown-item">Kidney Disease</a></option>
-                                        <option value="3"><a href="heart.html" class="dropdown-item">Heart Disease</a></option>
-                                        <option value="3"><a href="formulaire-diabete.html" class="dropdown-item">Diabète</a></option>
+                                 
+                                <select class="form-select bg-light border-0" style="height: 55px;">
+                                    <option selected>Maladie</option>
+                                    <option value="1">Malaria</a></option>
+                                    <option value="2">Kidney Disease</a></option>
+                                    <option value="3">Heart Disease</a></option>
+                                    <option value="3">Diabète</a></option>
 
-                                    </select>
-                                
-            
+                                </select>
                                 <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">prédicteur</button>
+                                    <button class="btn btn-dark w-100 py-3" type="submit" onclick="redirectToPrediction">prédicteur</button>
                                 </div>
+                                
                             </div>
                         </form>
                     </div>
@@ -246,7 +245,28 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="lib/twentytwenty/jquery.event.move.js"></script>
     <script src="lib/twentytwenty/jquery.twentytwenty.js"></script>
-
+    <script>
+        function redirectToPrediction() {
+            var selectedMaladie = document.getElementById("maladieSelect").value;
+            switch (selectedMaladie) {
+                case "Malaria":
+                    window.location.href = "malaria_prediction_page.html";
+                    break;
+                case "kidney Disease":
+                    window.location.href = "kidney_prediction_page.html";
+                    break;
+                case "heart Disease":
+                    window.location.href = "formulaire-Heart.html";
+                    break;
+                case "diabète":
+                    window.location.href = "formulaire-diabete.html";
+                    break;
+                default:
+                    print("veuillez choisir une maladie!");
+                    break;
+            }
+        }
+    </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
